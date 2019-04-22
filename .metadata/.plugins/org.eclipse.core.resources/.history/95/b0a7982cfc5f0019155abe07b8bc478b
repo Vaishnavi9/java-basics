@@ -1,0 +1,61 @@
+package SeparateFunction;
+
+import java.util.List;
+import java.util.*;
+
+public class Test {
+	
+	
+	
+	public static void main(String[] args) {
+		
+		List<Integer> l=new ArrayList<Integer>();
+		
+		l.add(3);
+		l.add(1);
+		
+		l.add(2);
+		l.add(2);
+		l.add(4);
+		
+		customSort(l);
+	
+	}
+	
+	
+	
+	
+	
+	
+	//public 
+	public static void customSort(List<Integer> arr) {
+		
+		Map<Integer,Integer> map=new HashMap<>();
+		
+		
+		
+		List<Integer> outputArray=new ArrayList<>();
+		
+		for (Integer current : arr) {
+			int count=map.getOrDefault(current, 0);
+			map.put(current, count+1);
+			outputArray.add(current);
+		}
+		
+		
+		Collections.sort(outputArray);
+		
+		
+		
+		for (Integer i=1;i<map.size();i++) {
+			System.out.println("k"+map.get(i));
+			
+		}
+		
+		
+	}
+	
+	
+	
+
+}

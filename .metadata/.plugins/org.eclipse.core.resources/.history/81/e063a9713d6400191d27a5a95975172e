@@ -1,0 +1,140 @@
+package overview;
+
+import java.util.*;
+
+/**
+ * Author:
+ * Date:
+ * */
+public class Theatre {
+
+	private   String theatreName="";
+	private List<Seat> seats=new ArrayList<>();
+	
+	public Theatre(String theatreName, int numRows, int seatsPerRow) {
+		this.theatreName=theatreName;
+		
+		
+		
+		int lastRow='A'+(numRows-1);
+		
+		//converts lastRow into equivalent character e.g 8 numrows so 72 lastRow value == H so H rows
+		for(char row='A';row<=lastRow;row++) {
+			for(int seatNum=1;seatNum<=seatsPerRow;seatNum++) {
+				
+				double price=12.0d;
+				
+				if((row<'D')&&(seatNum>4 || seatNum<9)) {
+					price=14.0;
+				}else if((row>'F')||(seatNum>9 || seatNum<4)) {
+					price=12.0;
+					
+				}
+				Seat seat=new Seat(row+String.format("%02d", seatNum),price);
+				seats.add(seat);
+			}
+		}
+	}
+
+	public String getTheatreName() {
+		return theatreName;
+	}
+	
+	
+	public boolean reserveSeats(String seatNumber) {
+		Seat requestedSeat=new Seat(seatNumber,0);
+		
+		int foundSeat = Collections.binarySearch(seats, requestedSeat, null);
+		
+		if(foundSeat>=0) {
+			
+			return seats.get(foundSeat).reserve();	
+		}else {
+			System.out.println("There is no seat "+seatNumber);
+			return false;
+		}
+		
+		/*for(Seat seat:seats) {
+			
+			if(seat.getSeatNumber().equals(seatNumber)) {
+				requestedSeat=seat;
+				break;
+			}
+	}
+		
+		if(requestedSeat == null) {
+			System.out.println("There is no seat "+seatNumber);
+			return false;
+		}
+	
+		
+		return requestedSeat.reserve();*/
+	}
+	
+	
+	public Collection<Seat> getseats() {
+		return seats;
+	}
+	
+	
+	
+	private class Seat implements Comparable<Seat>{
+
+
+		private  String seatNumber="";
+		
+		private boolean reserved=false;
+		private double price;
+		
+
+		
+		public Seat(String seatNumber, double price) {
+			this.seatNumber=seatNumber;
+			this.price =price;
+		}
+		
+		
+		
+
+		public String getSeatNumber() {
+			return seatNumber;
+		}
+
+
+
+
+		public boolean reserve() {
+			if(!this.reserved) {
+				this.reserved=true;
+				System.out.println("Seat "+seatNumber+" reserved.");
+				return true;
+			}
+			return false;
+		}
+
+		
+		
+		
+		public boolean cancel() {
+			if(this.reserved) {
+				this.reserved=false;
+				System.out.println("Seat "+seatNumber+" cancelled.");
+			}
+				
+				return false;
+		}
+
+
+
+
+		@Override
+		public int compareTo(Seat seat) {
+			// TODO Auto-generated method stub
+			return this.seatNumber.compareTo(seat.getSeatNumber());
+		}
+		
+		
+		
+	}
+	
+}

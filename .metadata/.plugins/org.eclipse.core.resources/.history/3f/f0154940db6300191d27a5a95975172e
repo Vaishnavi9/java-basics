@@ -1,0 +1,29 @@
+package overview;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		
+		Theatre theatre=new Theatre("Olympian",8,12);
+		
+		theatre.getseats();
+		
+		
+		if(theatre.reserveSeats("H50")) {
+			System.out.println("Seat H10 reserved. Please Pay");
+			
+		}else {
+			System.out.println("The seat is already taken"); 
+		
+		}
+		
+		
+		
+	}
+	
+	
+	
+	
+
+}
