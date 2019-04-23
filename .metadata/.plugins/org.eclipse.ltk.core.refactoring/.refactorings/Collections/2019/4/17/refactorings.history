@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;overview.JavaMaps&apos; to &apos;SortArrayUsingFrequency&apos;&#x0D;&#x0A;- Original project: &apos;Collections&apos;&#x0D;&#x0A;- Original element: &apos;overview.JavaMaps&apos;&#x0D;&#x0A;- Renamed element: &apos;overview.SortArrayUsingFrequency&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;JavaMaps&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;overview{JavaMaps.java[JavaMaps" matchStrategy="1" name="SortArrayUsingFrequency" qualified="false" references="true" similarDeclarations="false" stamp="1556001584480" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,14 @@
+package overview;
+
+import java.util.HashMap;
+
+public class JavaMaps {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		Map<String,String> courses=new HashMap();
+	}
+
+}

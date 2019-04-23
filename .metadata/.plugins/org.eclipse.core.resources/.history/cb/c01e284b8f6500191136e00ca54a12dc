@@ -1,0 +1,57 @@
+package overview;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class JavaMaps {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		Map<String,String> courses=new HashMap();
+		
+		courses.put("Java", "a compiled high level, object-oriented, platform independent language.");
+		courses.put("Python", "interpreted, object oriented, high-level programming language.");
+		courses.put("Algol", "an algorithmic language.");
+		
+		
+		System.out.println(courses.put("Lisp", "what is it?"));
+		
+		if(courses.containsKey("java")) {
+			
+			System.out.println("Contains key already");
+		}
+		else {
+			courses.put("Java", "Tim's awesome course");
+			System.out.println("java added successfully...");
+		}
+		
+		
+		
+		List<Integer> list=new ArrayList<>();
+		list.add(3);
+		list.add(4);
+		list.add(3);
+		list.add(7);
+		list.add(7);
+		list.add(2);
+		list.add(2);
+		list.add(7);
+		list.add(3);
+		list.add(3);
+		
+		System.out.println(courses.values());
+		
+		Map<Integer, Integer> count=new HashMap<>();
+		for (Integer integer : list) {
+			int c=count.getOrDefault(integer, 0);
+			
+			count.put(integer, c);
+		}
+		
+	}
+
+}

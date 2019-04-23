@@ -1,0 +1,31 @@
+package overview;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class JavaMaps {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		Map<String,String> courses=new HashMap();
+		
+		courses.put("Java", "a compiled high level, object-oriented, platform independent language.");
+		courses.put("Python", "interpreted, object oriented, high-level programming language.");
+		courses.put("Algol", "an algorithmic language.");
+		
+		
+		System.out.println(courses.put("Lisp", "what is it?"));
+		
+		if(courses.containsKey("Java")) {
+			System.out.println("Contains key already");
+		}
+		else {
+			courses.put("Java", "Tim's awesome course");
+			System.out.println("");
+		}
+		
+	}
+
+}
